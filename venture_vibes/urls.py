@@ -20,6 +20,7 @@ from blog import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'),
     path('blog/', include(('blog.urls', 'blog'), namespace='blog-urls')),
+    path('summernote/', include('django_summernote.urls')),
+    path('', views.index, name='index'),
 ]
