@@ -12,4 +12,4 @@ class PostAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     date_hierarchy = 'publish'
     ordering = ['status']
-    summernote_fields = ('body',)
+    summernote_fields = ('body', 'excerpt',)
