@@ -19,8 +19,9 @@ from django.urls import path, include
 from blog import views
 
 urlpatterns = [
+    path('about/', include(('about.urls', 'about'), namespace='about')),
     path('admin/', admin.site.urls),
-    path('blog/', include(('blog.urls', 'blog'), namespace='blog-urls')),
+    path('blog/', include(('blog.urls', 'blog'), namespace='blog')),
     path('summernote/', include('django_summernote.urls')),
-    path('', views.index, name='index'),
+    path('', include(('blog.urls', 'blog'), namespace='blog-home')),
 ]
