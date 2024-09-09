@@ -5,7 +5,7 @@ from .models import About
 # Create your views here.
 class AboutView(View):
     def get(self, request):
-        about = About.objects.order_by('-updated_on').first()
+        about = About.objects.order_by('-updated').first()
         return render(
             request,
             "about/about.html",
