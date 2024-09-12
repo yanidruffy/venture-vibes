@@ -1,5 +1,5 @@
-from django.views import generic
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.views import generic, View
 from .models import Post
 
 # Create your views here.
@@ -10,10 +10,20 @@ class PostListView(generic.ListView):
     template_name = 'blog/list.html'
     context_object_name = 'posts'
 
-class PostDetailView(generic.DetailView):
-    model = Post
-    template_name = 'blog/post_detail.html'
-    context_object_name = 'post'
+class PostDetailView(View):
+    def get(self,request, slug):
+        post = get_object_or_404(Post, slug=slug)
+        comments = post.comments.all().order_by('-created')
+        comment_count = post.comments.filter(active=True).count()
+        return render(
+            request,
+            'blog/post_detail.html',
+            {
+                'post': post,
+                'comments': comments,
+                'comment_count': comment_count,
+            }
+        )
 
 def index(request):
     latest_post = Post.objects.filter(status=Post.Status.PUBLISHED).order_by('-publish').first()
