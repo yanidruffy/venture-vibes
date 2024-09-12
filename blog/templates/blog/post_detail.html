@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 {% block content %}
 
 <!-- Hero Section -->
@@ -25,7 +26,7 @@
 </div>
 <!-- Comments Section -->
 <div class="container my-5">
-    <h3>Comments ({{ comment_count }})</h3>
+    <h4>Comments ({{ comment_count }})</h4>
     {% if comments %}
     <ul class="list-unstyled">
         {% for comment in comments %}
@@ -41,5 +42,21 @@
     {% else %}
     <p>No comments yet.</p>
     {% endif %}
+    <!-- Comment Form -->
+    <div class="my-4">
+        <h4 class="mb-3">Leave a comment</h4>
+        {% if user.is_authenticated %}
+        <div class="comment-body p-3 border rounded">
+            <form id="commentForm" method="post">
+                {{ comment_form|crispy }}
+                {% csrf_token %}
+                <p class="text-muted">Posting as: {{ user.username }}</p>
+                <button id="submitButton" type="submit" class="btn btn-primary mt-3">Submit</button>
+            </form>
+            {% else %}
+            <p>You need to <a href="{% url 'account_login' %}">log in</a> to leave a comment.</p>
+            {% endif %}
+        </div>
+    </div>
 </div>
 {% endblock %}

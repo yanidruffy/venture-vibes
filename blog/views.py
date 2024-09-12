@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
+from .forms import CommentForm
 from .models import Post
 
 # Create your views here.
@@ -15,6 +16,7 @@ class PostDetailView(View):
         post = get_object_or_404(Post, slug=slug)
         comments = post.comments.all().order_by('-created')
         comment_count = post.comments.filter(active=True).count()
+        comment_form = CommentForm()
         return render(
             request,
             'blog/post_detail.html',
@@ -22,6 +24,7 @@ class PostDetailView(View):
                 'post': post,
                 'comments': comments,
                 'comment_count': comment_count,
+                'comment_form': comment_form,
             }
         )
 
