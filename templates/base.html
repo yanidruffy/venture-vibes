@@ -17,24 +17,30 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-  <!-- Navbar -->
+  <!-- Header -->
   <div class="container">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
       <div class="col-md-3 mb-2 mb-md-0">
         <a href="{% url 'blog:index' %}" class="d-inline-flex link-body-emphasis text-decoration-none">Venture Vibes</a>
       </div>
-      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="{% url 'blog:index' %}" class="nav-link px-2 link-secondary">{% trans "Home" %}</a></li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="{% url 'blog:index' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            {% trans "Adventures" %}
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{% url 'blog:post_list' %}">{% trans "Iceland Roadtrip" %}</a></li>
-          </ul>
-        </li>
-        <li><a href="{% url 'about:about' %}" class="nav-link px-2">{% trans "About" %}</a></li>
-      </ul>
+
+      <!-- Navbar -->
+      <nav class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <ul class="nav" >
+          <li><a href="{% url 'blog:index' %}" class="nav-link px-2 link-secondary">{% trans "Home" %}</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="{% url 'blog:index' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {% trans "Adventures" %}
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'blog:post_list' %}">{% trans "Iceland Roadtrip" %}</a></li>
+            </ul>
+          </li>
+          <li><a href="{% url 'about:about' %}" class="nav-link px-2">{% trans "About" %}</a></li>
+        </ul>
+      </nav>
+      
+      <!-- User Authentication -->
       <div class="col-md-3 text-end">
         {% if user.is_authenticated %}
         <div class="dropdown text-end">
@@ -55,6 +61,17 @@
       </div>
     </header>
   </div>
+  <!-- Alert Messages -->
+  {% if messages %}
+  <div class="alert-container">
+      {% for message in messages %}
+          <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+              {{ message|safe }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+      {% endfor %}
+  </div>
+{% endif %}
   <main>
     {% block content %}
     {% endblock %}

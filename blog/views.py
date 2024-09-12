@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
+from django.contrib import messages
 from .forms import CommentForm
 from .models import Post
 
@@ -12,9 +13,9 @@ class PostListView(generic.ListView):
     context_object_name = 'posts'
 
 class PostDetailView(View):
-    def get(self,request, slug):
+    def get(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
-        comments = post.comments.all().order_by('-created')
+        comments = post.comments.filter(active=True).order_by('-created')
         comment_count = post.comments.filter(active=True).count()
         comment_form = CommentForm()
         return render(
@@ -25,6 +26,41 @@ class PostDetailView(View):
                 'comments': comments,
                 'comment_count': comment_count,
                 'comment_form': comment_form,
+            }
+        )
+
+    def post(self, request, slug):
+        post = get_object_or_404(Post, slug=slug)
+        comment_form = CommentForm(data=request.POST)
+        comments = post.comments.filter(active=True).order_by('-created')
+        comment_count = post.comments.filter(active=True).count()
+
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.author = request.user
+            comment.post = post
+            comment.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Comment submitted and awaiting approval'
+            )
+
+            comment_form = CommentForm()
+
+        else:
+            messages.add_message(
+                request, messages.ERROR,
+                'Comment has not been submitted due to an Error'
+            )
+        
+        return render(
+            request,
+            'blog/post_detail.html',
+            {
+                'post': post,
+                'comments': comments,
+                'comment_count': comment_count,
+                'comment_form': CommentForm(),
             }
         )
 
