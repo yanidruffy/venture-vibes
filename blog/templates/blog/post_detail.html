@@ -33,8 +33,12 @@
             <li class="mb-4">
                 <div class="comment-body p-3 border rounded">
                     <p><strong>{{ comment.author }}</strong></p>
-                    <p>{{ comment.body }}</p>
+                    <p>{{ comment.body|linebreaks }}</p>
                     <p class="text-muted"><em>Posted on {{ comment.created|date:"j F, Y H:i" }}</em></p>
+                    {% if user.is_authenticated and comment.author == user %}
+                        <button class="btn btn-success" comment_id="{{ comment.id }}">Edit</button>
+                        <button class="btn btn-danger" comment_id="{{ comment.id }}">Delete</button>
+                    {% endif %}
                 </div>
             </li>
         {% endfor %}
