@@ -95,6 +95,18 @@ def comment_edit(request, slug, comment_id):
         }
     )
 
+def comment_delete(request, slug, comment_id):
+    post = get_object_or_404(Post, slug=slug)
+    comment = get_object_or_404(Comment, pk=comment_id)
+
+    if comment.author == request.user:
+        comment.delete()
+        messages.add_message(request, messages.SUCCESS, 'Comment deleted successfully!')
+    else:
+        messages.add_message(request, messages.ERROR, 'You are not allowed to delete this comment.')
+
+    return HttpResponseRedirect(reverse('blog:post_detail', args=[slug]))
+
 def index(request):
     latest_post = Post.objects.filter(status=Post.Status.PUBLISHED).order_by('-publish').first()
     return render(
