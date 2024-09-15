@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -16,6 +17,7 @@ class Post(models.Model):
 		on_delete=models.CASCADE,
 		related_name='blog_posts'
 	)
+    featured_image = CloudinaryField('image', default='placeholder')
     body = models.TextField()
     excerpt = models.TextField(blank=True)
     publish = models.DateTimeField(default=timezone.now)
