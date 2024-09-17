@@ -27,6 +27,24 @@
     <p class="text-muted">
         Published on {{ post.publish|date:"j F, Y" }} by {{ post.author }}
     </p>
+    <div class="my-3">
+        {% if user.is_authenticated %}
+        <p>If you enjoyed this post, leave a like:</p>
+            <form action="{% url 'blog:like_post' post.slug %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-link">
+                    {% if user in post.likes.all %}
+                        <i class="fas fa-heart"></i>
+                    {% else %}
+                        <i class="far fa-heart"></i>
+                    {% endif %}
+                    <span>{{ post.likes.count }}</span>
+                </button>
+            </form>
+        {% else %}
+            <p>You need to <a href="{% url 'account_login' %}">log in</a> to like this post.</p>
+        {% endif %}
+    </div>
     <a href="{% url 'blog:post_list' %}" class="icon-link gap-1 icon-link-hover">Back to List</a>
 </div>
 <!-- Comments Section -->
