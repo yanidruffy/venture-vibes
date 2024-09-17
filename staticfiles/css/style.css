@@ -1,0 +1,15 @@
+body {
+    font-family: 'Verdana', sans-serif !important;
+}
+
+.fas.fa-heart.liked {
+    color: #ff0000;
+}
+
+.far.fa-heart {
+    color: #808080;
+}
+
+.card {
+    margin: auto;
+}
