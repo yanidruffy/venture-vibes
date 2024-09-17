@@ -12,6 +12,7 @@ class PostListView(generic.ListView):
     queryset = Post.objects.filter(status=Post.Status.PUBLISHED)
     template_name = 'blog/list.html'
     context_object_name = 'posts'
+    paginate_by = 3
 
 class PostDetailView(View):
     def get(self, request, slug):
