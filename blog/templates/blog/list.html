@@ -7,20 +7,22 @@
     <div class="px-4 pt-5 my-5 text-center border-bottom">
         <h1 class="display-4 fw-bold text-body-emphasis">Iceland: An Epic Roadtrip Adventure</h1>
         <div class="col-lg-9 mx-auto">
-          <p class="lead mb-4">
-            Join us as we explore the stunning landscapes and hidden gems of Iceland.
-            From majestic waterfalls and geysers to breathtaking glaciers and volcanic formations,
-            our roadtrip offers a journey through one of the most unique and beautiful places on Earth. 
-            Discover the magic of Iceland with us and get inspired for your own adventure!
-        </p>
+            <p class="lead mb-4">
+                Join us as we explore the stunning landscapes and hidden gems of Iceland.
+                From majestic waterfalls and geysers to breathtaking glaciers and volcanic formations,
+                our roadtrip offers a journey through one of the most unique and beautiful places on Earth. 
+                Discover the magic of Iceland with us and get inspired for your own adventure!
+            </p>
         </div>
         <div class="overflow-hidden" style="max-height: 30vh;">
-          <div class="container px-5">
-            <img src="{% static 'images/car.webp' %}" class="img-fluid border rounded-3 shadow-lg mb-4" alt="tentcar" width="700" height="500" loading="lazy">
-          </div>
+            <div class="container px-5">
+                <img src="{% static 'images/car.webp' %}" class="img-fluid border rounded-3 shadow-lg mb-4" alt="tentcar" width="700" height="500" loading="lazy">
+            </div>
         </div>
     </div>
-
+</div>
+    
+<div class="container text-center">
     <!-- Blog Cards -->
     <div class="row">
         {% for post in posts %}
@@ -36,7 +38,9 @@
         </div>
         {% endfor %}
     </div> 
+</div>
 
+<div class="container text-center">
     <!-- Pagination Controls -->
     <div class="pagination mt-4"></div>
         <span class="step-links">
@@ -54,5 +58,5 @@
         </span>
     </div>
 </div>
-
+    
 {% endblock %}

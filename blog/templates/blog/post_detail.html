@@ -27,14 +27,15 @@
     <p class="text-muted">
         Published on {{ post.publish|date:"j F, Y" }} by {{ post.author }}
     </p>
+    <!-- Like Button -->
     <div class="my-3">
         {% if user.is_authenticated %}
         <p>If you enjoyed this post, leave a like:</p>
             <form action="{% url 'blog:like_post' post.slug %}" method="post">
                 {% csrf_token %}
-                <button type="submit" class="btn btn-link">
+                <button type="submit" class="btn btn-link like-button">
                     {% if user in post.likes.all %}
-                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-heart liked"></i>
                     {% else %}
                         <i class="far fa-heart"></i>
                     {% endif %}
