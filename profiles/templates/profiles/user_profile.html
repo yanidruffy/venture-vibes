@@ -1,40 +1,42 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% load i18n %}
 {% block content %}
 <div class="container mt-4">
-    <h1 class="mb-4">My Profile</h1>
+    <h1 class="mb-4">{% trans "My Profile" %}</h1>
 
     <div class="row">
         <div class="col-md-6 mb-4">
-            <h2>Approved Comments</h2>
+            <h2>{% trans "Approved Comments" %}</h2>
             {% if approved_comments %}
                 <ul class="list-group">
                     {% for comment in approved_comments %}
                         <li class="list-group-item">
                             {{ comment.body|linebreaks }}
-                            <small class="text-muted"> (Posted on {{ comment.created|date:"j M Y H:i" }})</small>
+                            <small class="text-muted"> ({% trans "Posted on" %} <a href="{% url 'blog:post_detail' comment.post.slug %}">{{ comment.post.title }}</a>
+                                {{ comment.created|date:"j M Y H:i" }})</small>
                         </li>
                     {% endfor %}
                 </ul>
             {% else %}
-                <p class="text-muted">No approved comments.</p>
+                <p class="text-muted">{% trans "No approved comments."" %}</p>
             {% endif %}
         </div>
 
         <div class="col-md-6 mb-4">
-            <h2>Unapproved Comments</h2>
+            <h2>{% trans "Unapproved Comments" %}</h2>
             {% if unapproved_comments %}
                 <ul class="list-group">
                     {% for comment in unapproved_comments %}
                         <li class="list-group-item">
                             {{ comment.body|linebreaks }}
-                            <small class="text-muted"> (Posted on {{ comment.created|date:"j M Y H:i" }})</small>
+                            <small class="text-muted"> ({% trans "Posted on" %} <a href="{% url 'blog:post_detail' comment.post.slug %}">{{ comment.post.title }}</a>
+                                {{ comment.created|date:"j M Y H:i" }})</small>
                         </li>
                     {% endfor %}
                 </ul>
             {% else %}
-                <p class="text-muted">No unapproved comments.</p>
+                <p class="text-muted">{% trans "No approved comments."" %}</p>
             {% endif %}
         </div>
     </div>
