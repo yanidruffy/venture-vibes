@@ -13,3 +13,10 @@ body {
 .card {
     margin: auto;
 }
+
+.errorlist {
+    background-color:#ff0000;
+    color: #f3f6f4;
+    border-radius: 5px !important;
+    list-style-type: none;
+}
