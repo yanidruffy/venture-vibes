@@ -40,5 +40,19 @@
             {% endif %}
         </div>
     </div>
+    <div class="container">
+        <h2>{% trans "Liked Posts" %}</h2>
+            {% if liked_posts %}
+                <ul class="list-group">
+                    {% for post in liked_posts %}
+                        <li class="list-group-item">
+                            <a href="{% url 'blog:post_detail' post.slug %}">{{ post.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p class="text-muted">{% trans "No liked posts." %}</p>
+            {% endif %}
+    </div>
 </div>
 {% endblock %}
