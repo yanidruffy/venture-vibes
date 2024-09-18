@@ -23,7 +23,8 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path('admin/', admin.site.urls),
     path('blog/', include(('blog.urls', 'blog'), namespace='blog')),
-    path('profiles/', include('profiles.urls', namespace='profiles')),
+    path('contact/', include(('contact.urls', 'contact'), namespace='contact')),
+    path('profiles/', include(('profiles.urls', 'profiles'), namespace='profiles')),
     path('summernote/', include('django_summernote.urls')),
     path('', include(('blog.urls', 'blog'), namespace='blog-home')),
 ]

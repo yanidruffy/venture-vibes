@@ -12,7 +12,11 @@
                 <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">{{ about.title }}</h1>
                 <p class="lead">{{ about.body|safe }}</p>
                 <p class="text-end"><em>Updated on: {{ about.updated|date:"j F, Y"}}</em></p>
+                <div class="text-end mt-4">
+                    <a href="{% url 'contact:contact' %}" class="btn btn-outline-secondary btn-lg px-4">Contact Us</a>
+                </div>
             </div>
+
         </div>
     </div>
 </div>
