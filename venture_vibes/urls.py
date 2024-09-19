@@ -14,21 +14,22 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import handler404, handler500
 from venture_vibes import views
 
 urlpatterns = [
-    path('about/', include(('about.urls', 'about'), namespace='about')),
+    path("about/", include(("about.urls", "about"), namespace="about")),
     path("accounts/", include("allauth.urls")),
-    path('admin/', admin.site.urls),
-    path('blog/', include(('blog.urls', 'blog'), namespace='blog')),
-    path('contact/', include(('contact.urls', 'contact'), namespace='contact')),
-    path('profiles/', include(('profiles.urls', 'profiles'), namespace='profiles')),
-    path('summernote/', include('django_summernote.urls')),
-    path('', include(('blog.urls', 'blog'), namespace='blog-home')),
+    path("admin/", admin.site.urls),
+    path("blog/", include(("blog.urls", "blog"), namespace="blog")),
+    path("contact/", include(("contact.urls", "contact"), namespace="contact")),
+    path("profiles/", include(("profiles.urls", "profiles"), namespace="profiles")),
+    path("summernote/", include("django_summernote.urls")),
+    path("", include(("blog.urls", "blog"), namespace="blog-home")),
 ]
 
-handler404 = 'venture_vibes.views.custom_404_view'
-handler500 = 'venture_vibes.views.custom_500_view'
+handler404 = "venture_vibes.views.custom_404_view"
+handler500 = "venture_vibes.views.custom_500_view"

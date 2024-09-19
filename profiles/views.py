@@ -4,6 +4,7 @@ from blog.models import Comment, Post
 
 # Create your views here.
 
+
 @login_required
 def user_profile(request):
     user = request.user
@@ -13,12 +14,11 @@ def user_profile(request):
 
     return render(
         request,
-        'profiles/user_profile.html',
+        "profiles/user_profile.html",
         {
-            'approved_comments': approved_comments,
-            'unapproved_comments': unapproved_comments,
-            'liked_posts': liked_posts,
-            'user': user,
-        }
+            "approved_comments": approved_comments,
+            "unapproved_comments": unapproved_comments,
+            "liked_posts": liked_posts,
+            "user": user,
+        },
     )
-

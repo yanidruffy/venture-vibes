@@ -2,14 +2,15 @@ from django.views import View
 from django.shortcuts import render
 from .models import About
 
+
 # Create your views here.
 class AboutView(View):
     def get(self, request):
-        about = About.objects.order_by('-updated').first()
+        about = About.objects.order_by("-updated").first()
         return render(
             request,
             "about/about.html",
             {
-                'about': about,
-            }
+                "about": about,
+            },
         )

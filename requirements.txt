@@ -1,4 +1,6 @@
 asgiref==3.8.1
+black==24.8.0
+click==8.1.7
 cloudinary==1.36.0
 crispy-bootstrap5==2024.2
 dj-database-url==2.2.0
@@ -8,6 +10,7 @@ django-allauth==64.2.1
 django-crispy-forms==2.3
 django-summernote==0.8.20.0
 gunicorn==23.0.0
+pathspec==0.12.1
 psycopg2==2.9.9
 sqlparse==0.5.1
 urllib3==1.26.20
