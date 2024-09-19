@@ -9,50 +9,52 @@
         <div class="col-md-6 mb-4">
             <h2>{% trans "Approved Comments" %}</h2>
             {% if approved_comments %}
-                <ul class="list-group">
-                    {% for comment in approved_comments %}
-                        <li class="list-group-item">
-                            {{ comment.body|linebreaks }}
-                            <small class="text-muted"> ({% trans "Posted on" %} <a href="{% url 'blog:post_detail' comment.post.slug %}">{{ comment.post.title }}</a>
-                                {{ comment.created|date:"j M Y H:i" }})</small>
-                        </li>
-                    {% endfor %}
-                </ul>
+            <ul class="list-group">
+                {% for comment in approved_comments %}
+                <li class="list-group-item">
+                    {{ comment.body|linebreaks }}
+                    <small class="text-muted"> ({% trans "Posted on" %} <a
+                            href="{% url 'blog:post_detail' comment.post.slug %}">{{ comment.post.title }}</a>
+                        {{ comment.created|date:"j M Y H:i" }})</small>
+                </li>
+                {% endfor %}
+            </ul>
             {% else %}
-                <p class="text-muted">{% trans "No approved comments." %}</p>
+            <p class="text-muted">{% trans "No approved comments." %}</p>
             {% endif %}
         </div>
 
         <div class="col-md-6 mb-4">
             <h2>{% trans "Unapproved Comments" %}</h2>
             {% if unapproved_comments %}
-                <ul class="list-group">
-                    {% for comment in unapproved_comments %}
-                        <li class="list-group-item">
-                            {{ comment.body|linebreaks }}
-                            <small class="text-muted"> ({% trans "Posted on" %} <a href="{% url 'blog:post_detail' comment.post.slug %}">{{ comment.post.title }}</a>
-                                {{ comment.created|date:"j M Y H:i" }})</small>
-                        </li>
-                    {% endfor %}
-                </ul>
+            <ul class="list-group">
+                {% for comment in unapproved_comments %}
+                <li class="list-group-item">
+                    {{ comment.body|linebreaks }}
+                    <small class="text-muted"> ({% trans "Posted on" %} <a
+                            href="{% url 'blog:post_detail' comment.post.slug %}">{{ comment.post.title }}</a>
+                        {{ comment.created|date:"j M Y H:i" }})</small>
+                </li>
+                {% endfor %}
+            </ul>
             {% else %}
-                <p class="text-muted">{% trans "No approved comments." %}</p>
+            <p class="text-muted">{% trans "No approved comments." %}</p>
             {% endif %}
         </div>
     </div>
     <div class="container">
         <h2>{% trans "Liked Posts" %}</h2>
-            {% if liked_posts %}
-                <ul class="list-group">
-                    {% for post in liked_posts %}
-                        <li class="list-group-item">
-                            <a href="{% url 'blog:post_detail' post.slug %}">{{ post.title }}</a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            {% else %}
-                <p class="text-muted">{% trans "No liked posts." %}</p>
-            {% endif %}
+        {% if liked_posts %}
+        <ul class="list-group">
+            {% for post in liked_posts %}
+            <li class="list-group-item">
+                <a href="{% url 'blog:post_detail' post.slug %}">{{ post.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p class="text-muted">{% trans "No liked posts." %}</p>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

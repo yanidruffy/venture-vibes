@@ -10,18 +10,19 @@
             <p class="lead mb-4">
                 Join us as we explore the stunning landscapes and hidden gems of Iceland.
                 From majestic waterfalls and geysers to breathtaking glaciers and volcanic formations,
-                our roadtrip offers a journey through one of the most unique and beautiful places on Earth. 
+                our roadtrip offers a journey through one of the most unique and beautiful places on Earth.
                 Discover the magic of Iceland with us and get inspired for your own adventure!
             </p>
         </div>
         <div class="overflow-hidden" style="max-height: 30vh;">
             <div class="container px-5">
-                <img src="{% static 'images/car.webp' %}" class="img-fluid border rounded-3 shadow-lg mb-4" alt="tentcar" width="700" height="500" loading="lazy">
+                <img src="{% static 'images/car.webp' %}" class="img-fluid border rounded-3 shadow-lg mb-4"
+                    alt="tentcar" width="700" height="500" loading="lazy">
             </div>
         </div>
     </div>
 </div>
-    
+
 <div class="container text-center">
     <!-- Blog Cards -->
     <div class="row justify-content-sm-center">
@@ -37,26 +38,26 @@
             </div>
         </div>
         {% endfor %}
-    </div> 
+    </div>
 </div>
 
 <div class="container text-center">
     <!-- Pagination Controls -->
     <div class="pagination mt-4"></div>
-        <span class="step-links">
-            {% if page_obj.has_previous %}
-                <a href="?page={{ page_obj.previous_page_number }}">&laquo; Previous</a>
-            {% endif %}
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}">&laquo; Previous</a>
+        {% endif %}
 
-            <span class="current">
-                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
-            </span>
-
-            {% if page_obj.has_next %}
-                <a href="?page={{ page_obj.next_page_number }}">Next &raquo;</a>
-            {% endif %}
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
         </span>
-    </div>
+
+        {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">Next &raquo;</a>
+        {% endif %}
+    </span>
 </div>
-    
+</div>
+
 {% endblock %}

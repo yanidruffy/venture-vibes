@@ -5,107 +5,106 @@
 
 <!-- Hero Section -->
 <div class="container">
-    <div class="px-4 pt-5 my-5 text-center border-bottom">
-        <h1 class="display-4 fw-bold text-body-emphasis">{{ post.title }}</h1>
-        <div class="overflow-hidden" style="max-height: 30vh;">
-          <div class="container px-5">
-            {% if "placeholder" in post.featured_image.url %}
-              <img src="{% static 'images/default.webp' %}" class="img-fluid border rounded-3 shadow-lg mb-4" alt="placeholder image" width="700" height="500" loading="lazy">
-            {% else %}
-              <img src="{{ post.featured_image.url }}" class="img-fluid border rounded-3 shadow-lg mb-4" alt="{{ post.title }}" width="700" height="500" loading="lazy">
-            {% endif %}
-          </div>
-          </div>
-        </div>
+  <div class="px-4 pt-5 my-5 text-center border-bottom">
+    <h1 class="display-4 fw-bold text-body-emphasis">{{ post.title }}</h1>
+    <div class="overflow-hidden" style="max-height: 30vh;">
+      <div class="container px-5">
+        {% if "placeholder" in post.featured_image.url %}
+        <img src="{% static 'images/default.webp' %}" class="img-fluid border rounded-3 shadow-lg mb-4"
+          alt="placeholder image" width="700" height="500" loading="lazy">
+        {% else %}
+        <img src="{{ post.featured_image.url }}" class="img-fluid border rounded-3 shadow-lg mb-4"
+          alt="{{ post.title }}" width="700" height="500" loading="lazy">
+        {% endif %}
+      </div>
     </div>
+  </div>
+</div>
 </div>
 <!-- Post Detail -->
 <div class="container my-5">
-    <div class="mb-4">
-        {{ post.body|safe }}
-    </div>
-    <p class="text-muted">
-        Published on {{ post.publish|date:"j F, Y" }} by {{ post.author }}
-    </p>
-    <!-- Like Button -->
-    <div class="my-3">
-        {% if user.is_authenticated %}
-        <p>If you enjoyed this post, leave a like:</p>
-            <form action="{% url 'blog:like_post' post.slug %}" method="post">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-link like-button">
-                    {% if user in post.likes.all %}
-                        <i class="fas fa-heart liked"></i>
-                    {% else %}
-                        <i class="far fa-heart"></i>
-                    {% endif %}
-                    <span>{{ post.likes.count }}</span>
-                </button>
-            </form>
+  <div class="mb-4">
+    {{ post.body|safe }}
+  </div>
+  <p class="text-muted">
+    Published on {{ post.publish|date:"j F, Y" }} by {{ post.author }}
+  </p>
+  <!-- Like Button -->
+  <div class="my-3">
+    {% if user.is_authenticated %}
+    <p>If you enjoyed this post, leave a like:</p>
+    <form action="{% url 'blog:like_post' post.slug %}" method="post">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-link like-button">
+        {% if user in post.likes.all %}
+        <i class="fas fa-heart liked"></i>
         {% else %}
-            <p>You need to <a href="{% url 'account_login' %}">log in</a> to like this post.</p>
+        <i class="far fa-heart"></i>
         {% endif %}
-    </div>
-    <a href="{% url 'blog:post_list' %}" class="icon-link gap-1 icon-link-hover">Back to List</a>
+        <span>{{ post.likes.count }}</span>
+      </button>
+    </form>
+    {% else %}
+    <p>You need to <a href="{% url 'account_login' %}">log in</a> to like this post.</p>
+    {% endif %}
+  </div>
+  <a href="{% url 'blog:post_list' %}" class="icon-link gap-1 icon-link-hover">Back to List</a>
 </div>
 <!-- Comments Section -->
 <div class="container my-5">
-    <h4>Comments ({{ comment_count }})</h4>
-    {% if comments %}
-    <ul class="list-unstyled">
-        {% for comment in comments %}
-            <li class="mb-4">
-                <div class="comment-body p-3 border rounded">
-                    <p><strong>{{ comment.author }}</strong></p>
-                    <p id="comment{{ comment.id }}" class="comment-body">{{ comment.body|linebreaks }}</p>
-                    <p class="text-muted"><em>Posted on {{ comment.created|date:"j F, Y H:i" }}</em></p>
-                    {% if user.is_authenticated and comment.author == user %}
-                        <button class="btn btn-success btn-edit" data-comment_id="{{ comment.id }}">Edit</button>
-                        <button class="btn btn-danger btn-delete" data-comment_id="{{ comment.id }}">Delete</button>
-                    {% endif %}
-                </div>
-            </li>
-        {% endfor %}
-    </ul>
-    {% else %}
-    <p>No comments yet.</p>
-    {% endif %}
-    <!-- Comment Form -->
-    <div class="my-4">
-        <h4 class="mb-3">Leave a Comment</h4>
-        {% if user.is_authenticated %}
-        <div class="comment-body p-3 border rounded">
-            <form id="commentForm" method="post">
-                {{ comment_form|crispy }}
-                {% csrf_token %}
-                <p class="text-muted">Posting as: {{ user.username }}</p>
-                <button id="submitButton" type="submit" class="btn btn-primary mt-3">{% if editing_comment %}Update{% else %}Submit{% endif %}</button>
-            </form>
-            {% else %}
-            <p>You need to <a href="{% url 'account_login' %}">log in</a> to leave a comment.</p>
-            {% endif %}
-        </div>
+  <h4>Comments ({{ comment_count }})</h4>
+  {% if comments %}
+  <ul class="list-unstyled">
+    {% for comment in comments %}
+    <li class="mb-4">
+      <div class="comment-body p-3 border rounded">
+        <p><strong>{{ comment.author }}</strong></p>
+        <p id="comment{{ comment.id }}" class="comment-body">{{ comment.body|linebreaks }}</p>
+        <p class="text-muted"><em>Posted on {{ comment.created|date:"j F, Y H:i" }}</em></p>
+        {% if user.is_authenticated and comment.author == user %}
+        <button class="btn btn-success btn-edit" data-comment_id="{{ comment.id }}">Edit</button>
+        <button class="btn btn-danger btn-delete" data-comment_id="{{ comment.id }}">Delete</button>
+        {% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>No comments yet.</p>
+  {% endif %}
+  <!-- Comment Form -->
+  <div class="my-4">
+    <h4 class="mb-3">Leave a Comment</h4>
+    {% if user.is_authenticated %}
+    <div class="comment-body p-3 border rounded">
+      <form id="commentForm" method="post">
+        {{ comment_form|crispy }}
+        {% csrf_token %}
+        <p class="text-muted">Posting as: {{ user.username }}</p>
+        <button id="submitButton" type="submit"
+          class="btn btn-primary mt-3">{% if editing_comment %}Update{% else %}Submit{% endif %}</button>
+      </form>
+      {% else %}
+      <p>You need to <a href="{% url 'account_login' %}">log in</a> to leave a comment.</p>
+      {% endif %}
     </div>
+  </div>
 </div>
 
 <!-- Delete confirmation modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1"
-  aria-labelledby="deleteModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title"
-          id="deleteModalLabel">Delete comment?</h5>
-        <button type="button" class="btn-close"
-          data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 class="modal-title" id="deleteModalLabel">Delete comment?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         Are you sure you want to delete your comment?
         This action cannot be undone.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary"
-          data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <a id="deleteConfirm" href="#" class="btn
           btn-danger">Delete</a>
       </div>
