@@ -16,7 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from blog import views
+from django.conf.urls import handler404, handler500
+from venture_vibes import views
 
 urlpatterns = [
     path('about/', include(('about.urls', 'about'), namespace='about')),
@@ -28,3 +29,6 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('', include(('blog.urls', 'blog'), namespace='blog-home')),
 ]
+
+handler404 = 'venture_vibes.views.custom_404_view'
+handler500 = 'venture_vibes.views.custom_500_view'
