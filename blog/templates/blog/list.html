@@ -43,21 +43,21 @@
 
 <div class="container text-center">
     <!-- Pagination Controls -->
-    <div class="pagination mt-4"></div>
-    <span class="step-links">
-        {% if page_obj.has_previous %}
-        <a href="?page={{ page_obj.previous_page_number }}">&laquo; Previous</a>
-        {% endif %}
+    <div class="pagination mt-4  justify-content-sm-center">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">&laquo; Previous</a>
+            {% endif %}
 
-        <span class="current">
-            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            </span>
+
+            {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Next &raquo;</a>
+            {% endif %}
         </span>
-
-        {% if page_obj.has_next %}
-        <a href="?page={{ page_obj.next_page_number }}">Next &raquo;</a>
-        {% endif %}
-    </span>
-</div>
+    </div>
 </div>
 
 {% endblock %}
