@@ -106,3 +106,9 @@ body {
     border-radius: 5px;
     list-style-type: none;
 }
+
+/* Faded Comments */
+.faded {
+    background-color: #c1c7cc;
+    color: #464c51;
+}

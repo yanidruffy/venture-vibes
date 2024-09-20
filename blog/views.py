@@ -19,7 +19,7 @@ class PostListView(generic.ListView):
 class PostDetailView(View):
     def get(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
-        comments = post.comments.filter(active=True).order_by("-created")
+        comments = post.comments.all().order_by("-created")
         comment_count = post.comments.filter(active=True).count()
         comment_form = CommentForm()
         return render(
@@ -30,13 +30,14 @@ class PostDetailView(View):
                 "comments": comments,
                 "comment_count": comment_count,
                 "comment_form": comment_form,
+                "user": request.user,
             },
         )
 
     def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
         comment_form = CommentForm(data=request.POST)
-        comments = post.comments.filter(active=True).order_by("-created")
+        comments = post.comments.all().order_by("-created")
         comment_count = post.comments.filter(active=True).count()
 
         if comment_form.is_valid():
@@ -65,6 +66,7 @@ class PostDetailView(View):
                 "comments": comments,
                 "comment_count": comment_count,
                 "comment_form": comment_form,
+                "user": request.user,
             },
         )
 
