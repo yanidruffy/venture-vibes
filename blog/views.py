@@ -72,10 +72,10 @@ class PostDetailView(View):
 
 
 def comment_edit(request, slug, comment_id):
-    post = get_object_or_404(Post, slug=slug)
-    comment = get_object_or_404(Comment, pk=comment_id)
 
     if request.method == "POST":
+        post = get_object_or_404(Post, slug=slug)
+        comment = get_object_or_404(Comment, pk=comment_id)
         comment_form = CommentForm(data=request.POST, instance=comment)
 
         if comment_form.is_valid() and comment.author == request.user:
@@ -90,17 +90,7 @@ def comment_edit(request, slug, comment_id):
         else:
             messages.add_message(request, messages.ERROR, "Error updating comment!")
 
-    return render(
-        request,
-        "blog/post_detail.html",
-        {
-            "post": post,
-            "comments": post.comments.filter(active=True).order_by("-created"),
-            "comment": comment,
-            "comment_form": comment_form,
-            "comment_count": post.comments.filter(active=True).count(),
-        },
-    )
+    return HttpResponseRedirect(reverse("blog:post_detail", args=[slug]))
 
 
 def comment_delete(request, slug, comment_id):

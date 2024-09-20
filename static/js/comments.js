@@ -1,7 +1,3 @@
-/**
- * Code taken directly from Code Institute's 'I think therefore I blog' project
- */
-
 const editButtons = document.getElementsByClassName("btn-edit");
 const commentText = document.getElementById("id_body");
 const commentForm = document.getElementById("commentForm");
@@ -13,6 +9,7 @@ const deleteConfirm = document.getElementById("deleteConfirm");
 for (let button of editButtons) {
   button.addEventListener("click", (e) => {
     let commentId = e.target.getAttribute("data-comment_id");
+    console.log(commentId)
     let commentContent = document.getElementById(`comment${commentId}`).innerText;
     commentText.value = commentContent;
     submitButton.innerText = "Update";
