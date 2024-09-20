@@ -97,7 +97,6 @@ def comment_edit(request, slug, comment_id):
             "comment": comment,
             "comment_form": comment_form,
             "comment_count": post.comments.filter(active=True).count(),
-            "editing_comment": True,
         },
     )
 
