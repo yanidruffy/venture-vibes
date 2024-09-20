@@ -1,22 +1,108 @@
+/* Global */
 body {
-    font-family: 'Verdana', sans-serif !important;
+    font-family: 'Verdana', sans-serif;
+    color: #212529;
+    background-color: #f2f5f6;
 }
 
-.fas.fa-heart.liked {
-    color: #ff0000;
+/* Links */
+.nav a {
+    color: #0077b6;
 }
 
-.far.fa-heart {
-    color: #808080;
+.nav a:hover,
+.nav a:focus,
+.nav a:active {
+    color: #006aa3;
 }
 
+.latest-post a {
+    color:#0077b6;
+}
+
+.latest-post a:hover,
+.latest-post a:focus,
+.latest-post a:active {
+    color: #006aa3;
+}
+
+.card a {
+    color: #0077b6;
+}
+
+.card a:hover,
+.card a:focus,
+.card a:active {
+    color: #006aa3;
+}
+
+.pagination a {
+    color: #0077b6;
+}
+
+.pagination a:hover,
+.pagination a:focus,
+.pagination a:active {
+    color: #006aa3;
+}
+
+/* Buttons */
+.btn-outline-primary {
+    border-color: #0077b6;
+    color: #0077b6;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+    background-color: #0077b6;
+    color: #f2f5f6;
+}
+
+.btn-outline-secondary {
+    border-color: #464c51;
+    color: #464c51;
+}
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus,
+.btn-outline-secondary:active {
+    background-color: #464c51;
+    color: #f2f5f6;
+}
+
+.btn-primary {
+    background-color: #0077b6;
+    border-color: #0077b6;
+    color: #f2f5f6;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: #006aa3;
+    border-color: #006aa3;
+    color: #f2f5f6;
+}
+
+/* Cards */
 .card {
     margin: auto;
 }
 
+/* Likes */
+.fas.fa-heart.liked {
+    color: #e63946;
+}
+
+.far.fa-heart {
+    color: #464c51;
+}
+
+/* Error List */
 .errorlist {
-    background-color:#ff0000;
-    color: #f3f6f4;
-    border-radius: 5px !important;
+    background-color: #e63946;
+    color: #f2f5f6;
+    border-radius: 5px;
     list-style-type: none;
 }
