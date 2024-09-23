@@ -29,7 +29,9 @@
     <header
       class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
       <div class="col-md-3 mb-2 mb-md-0">
-        <a href="{% url 'blog:index' %}" class="d-inline-flex link-body-emphasis text-decoration-none">Venture Vibes</a>
+        <a href="{% url 'blog:index' %}" class="d-inline-flex align-items-center link-body-emphasis text-decoration-none">
+          <img src="{% static 'images/logo.png' %}" alt="logo" width="18">
+          Venture Vibes</a>
       </div>
 
       <!-- Navbar -->
