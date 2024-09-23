@@ -20,15 +20,14 @@
     </div>
   </div>
 </div>
-</div>
 <!-- Post Detail -->
 <div class="container my-5">
   <div class="mb-4">
     {{ post.body|safe }}
   </div>
-  <p class="text-muted">
+  <div class="text-muted">
     Published on {{ post.publish|date:"j F, Y" }} by {{ post.author }}
-  </p>
+  </div>
   <!-- Like Button -->
   <div class="my-3">
     {% if user.is_authenticated %}
@@ -91,10 +90,10 @@
         <p class="text-muted">Posting as: {{ user.username }}</p>
         <button id="submitButton" type="submit" class="btn btn-primary mt-3">Submit</button>
       </form>
-      {% else %}
-      <p>You need to <a href="{% url 'account_login' %}">log in</a> to leave a comment.</p>
-      {% endif %}
     </div>
+    {% else %}
+    <p>You need to <a href="{% url 'account_login' %}">log in</a> to leave a comment.</p>
+    {% endif %}
   </div>
 </div>
 
