@@ -14,7 +14,9 @@ class Post(models.Model):
     title = models.CharField(max_length=250, unique=True)
     slug = models.SlugField(max_length=250, unique=True)
     author = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="blog_posts"
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name="blog_posts"
     )
     featured_image = CloudinaryField("image", default="placeholder")
     body = models.TextField()
@@ -37,9 +39,15 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")
+    post = models.ForeignKey(
+        Post,
+        on_delete=models.CASCADE,
+        related_name="comments"
+    )
     author = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="commenter"
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name="commenter"
     )
     body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)

@@ -15,11 +15,16 @@ def contact_view(request):
             messages.add_message(
                 request,
                 messages.SUCCESS,
-                """Your message has been received! We will respond to your message within 3 business days. 
+                """Your message has been received!
+                We will respond to your message within 3 business days.
                 Stay tuned for our reply.""",
             )
             return HttpResponseRedirect(reverse("blog:index"))
     else:
         contact_form = ContactForm()
 
-    return render(request, "contact/contact.html", {"contact_form": contact_form})
+    return render(
+        request,
+        "contact/contact.html",
+        {"contact_form": contact_form}
+    )

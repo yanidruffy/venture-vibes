@@ -46,7 +46,8 @@ class PostDetailView(View):
             comment.post = post
             comment.save()
             messages.add_message(
-                request, messages.SUCCESS, "Comment submitted and awaiting approval"
+                request, messages.SUCCESS,
+                "Comment submitted and awaiting approval"
             )
 
             comment_form = CommentForm()
@@ -84,13 +85,21 @@ def comment_edit(request, slug, comment_id):
             comment.active = False
             comment.save()
             messages.add_message(
-                request, messages.SUCCESS, "Comment updated and awaiting approval!"
+                request, messages.SUCCESS,
+                "Comment updated and awaiting approval!"
             )
-            return HttpResponseRedirect(reverse("blog:post_detail", args=[slug]))
+            return HttpResponseRedirect(
+                reverse("blog:post_detail", args=[slug])
+            )
         else:
-            messages.add_message(request, messages.ERROR, "Error updating comment!")
+            messages.add_message(
+                request, messages.ERROR,
+                "Error updating comment!"
+            )
 
-    return HttpResponseRedirect(reverse("blog:post_detail", args=[slug]))
+    return HttpResponseRedirect(
+        reverse("blog:post_detail", args=[slug])
+    )
 
 
 def comment_delete(request, slug, comment_id):
@@ -99,18 +108,25 @@ def comment_delete(request, slug, comment_id):
 
     if comment.author == request.user:
         comment.delete()
-        messages.add_message(request, messages.SUCCESS, "Comment deleted successfully!")
+        messages.add_message(
+            request, messages.SUCCESS,
+            "Comment deleted successfully!"
+        )
     else:
         messages.add_message(
-            request, messages.ERROR, "You are not allowed to delete this comment."
+            request, messages.ERROR,
+            "You are not allowed to delete this comment."
         )
 
-    return HttpResponseRedirect(reverse("blog:post_detail", args=[slug]))
+    return HttpResponseRedirect(
+        reverse("blog:post_detail", args=[slug])
+    )
 
 
 def index(request):
     latest_post = (
-        Post.objects.filter(status=Post.Status.PUBLISHED).order_by("-publish").first()
+        Post.objects.filter(status=Post.Status.PUBLISHED)
+            .order_by("-publish").first()
     )
     return render(
         request,
@@ -125,4 +141,6 @@ def like_post(request, slug):
         post.likes.remove(request.user)
     else:
         post.likes.add(request.user)
-    return HttpResponseRedirect(reverse("blog:post_detail", args=[slug]))
+    return HttpResponseRedirect(
+        reverse("blog:post_detail", args=[slug])
+    )
