@@ -7,6 +7,164 @@ Welcome to [Venture Vibes!](https://venture-vibes-e0fcf8943946.herokuapp.com/)
 **Venture Vibes** is an adventure blog dedicated to showcasing my partner and I's travel experiences, inspiring wanderlust, and providing valuable insights for fellow explorers.<br>
 This project features a user-friendly platform where readers can discover captivating stories, and detailed destination guides. The blog aims to document our adventures and create an engaging community for travel enthusiasts. Venture Vibes invites you to join our journey and ignite your passion for travel.
 
+## Features
+
+### Existing Features
+
+- **Stunning Visuals:** Captivating pictures accompany each story to immerse the reader in the experience
+- **Commenting Capability:** Readers can share their experiences by commenting on posts
+- **Like Functionality:** Show appreciation for favorite posts by liking them
+- **Responsive Design:** Ensures optimal view across various devices
+- **User-friendly Interface:** An intuitive website for browsing
+
+#### Homepage
+The **homepage** serves as the hub of **Venture Vibes** with an eye-catching banner, stunning travel images and featuring the latest blog post.
+
+![Full Homepage](./readme-files/images/home-full.png)
+
+<details>
+<summary><strong>Navbar and Hero section</strong></summary>
+The navigation bar will be visible throughout every page you are visiting on the website. When clicking on the logo "Venture Vibes", you get redirected to the homepage.
+In the middle of the bar you will find a "Home" button, a dropdown menu "Adventures" that has the current adventure as an item and the "About" page. In the Hero section, we welcome the user to our homepage.
+<details>
+<summary>User is authenticated</summary>
+When the User is logged in, the navigation bar includes personalized options such as "Profile" and "Sign out", allowing the user to access their profile account.
+Furthermore, the Hero Section is displaying buttons to the "Blog" and the "Contact Us" page.
+
+![Logged in User View Homepage](./readme-files/images/home-navhero-authuser.png)
+</details>
+
+<details>
+<summary>User is not authenticated</summary>
+When the User is not logged in, the navigation bar features buttons to "Login" and "Sign-up", animating to engage further with the website. The Hero Section is displaying buttons to the "Blog" and the "Join Us" page.
+
+![Logged out User View Homepage](./readme-files/images/home-navhero-nonauthuser.png)
+</details>
+</details>
+
+<details>
+<summary><strong>Carousel Images</strong></summary>
+
+The homepage features a carousel of three travel images, showcasing various destinations from the recent trip to Iceland. The goal is to entice them to explore the blog further.
+
+![Third Carousel Image](./readme-files/images/home-carousel.png)
+</details>
+
+<details>
+<summary><strong>Latest Blog Post</strong></summary>
+
+The homepage highlights the most recent blog post, giving readers a glimpse of the latest adventure, encouraging engagement with the freshest stories on the blog.
+</details>
+
+<details>
+<summary><strong>Footer</strong></summary>
+
+The footer provides essential links for staying connected. It includes social media icons, allowing users to follow the blog on platforms like X, Instagram and Facebook. And lets not forget the copyright notice.
+</details>
+
+#### Blog
+
+The **Blog** section is the heart of Venture Vibes, where users can explore a variety of travel posts. This section features a hero section, card-based blog previews, and pagination to navigate through multiple posts with ease.
+
+![Full Blog Page](./readme-files/images/blog-full.png)
+
+<details>
+<summary><strong>Hero Section</strong></summary>
+
+The blog section begins with a Hero Section that is used as an introduction to the chosen adventure. In this example, it's an epic road trip across Iceland, offering a preview of the adventure and inviting readers to join the journey.
+
+The hero image complements the post, giving a visual glimpse of what readers can expect.
+</details>
+
+<details>
+<summary><strong>Blog Cards</strong></summary>
+
+Below the Hero section, the blog is organized into a series of Blog Cards. Each card contains:
+- The title of the Blog Post
+- The name of the author and the date the post was published
+- A brief excerpt, meant to entice the user
+- A call to action that takes the user to the full blog post
+</details>
+
+<details>
+<summary><strong>Pagination Controls</strong></summary>
+
+The blog page features Pagination Controls at the bottom, allowing users to navigate between different pages of blog posts.
+</details>
+
+#### Post Detail
+
+The **Post Detail** page allows readers to dive deeper into each individual blog post. Users get a rich narrative that is supported by a stunning picture and opportunities to engage.
+![Full Post Detail Page](./readme-files/images/post-full.png)
+<details>
+<summary><strong>Hero Section</strong></summary>
+
+The hero section features the title of the post prominently along with a captivating image that sets the scene for the adventure discussed in the blog.
+![Post Hero](./readme-files/images/post-hero.png)
+</details>
+
+<details>
+<summary><strong>Post Content</strong></summary>
+The body of the post provides an engaging narrative. The publish date and author information are displayed at the bottom.
+</details>
+
+<details>
+<summary><strong>Like Button</strong></summary>
+Authenticated users can express their appreciation for the post by clicking the like button. The button visually indicates whether the user has liked the post and displays the total number of likes. For a visual, check the upcoming "Comments Section" pictures.
+</details>
+
+<details>
+<summary><strong>Comments Section</strong></summary>
+Authenticated user can engage with the content by leaving comments. The section displays the total number of comments, allowing users to read and interact with fellow travelers. Underneath is a simple comment form to do so. A post can be awaiting approval or you have the option to edit and delete your own post.
+
+<details>
+<summary>User is authenticated</summary>
+
+![Logged in User View](./readme-files/images/post-authuser.png)
+</details>
+
+<details>
+<summary>User is not authenticated</summary>
+
+![Logged out User View](./readme-files/images/post-nonauthuser.png)
+</details>
+</details>
+
+#### About
+
+The **About** page provides users with insights into the creators of **Venture Vibes**, sharing the passion and motivation behind the blog. It serves as a personal touchpoint, helping readers connect with the authors and understand the purpose of the platform. It features an image of the bloggers in a stunning location, visually representing the adventures that the blog discusses. A "Contact Us" button allows visitors to reach out for inquiries or collaborations for further engagement.
+
+![Full About Page](./readme-files/images/about-full.png)
+
+#### User Profile
+
+The **User Profile** page allows users to view and manage their activity on **Venture Vibes**. It provides a personalized experience, showcasing approved and unapproved comments as well as posts the user has liked.
+
+![Full User Profile Page](./readme-files/images/profile-full.png)
+
+#### Admin Panel
+
+The **Admin Panel** of **Venture Vibes** provides a django backend interface for managing content, users, and site settings. This allows the administrator to oversee all aspects of the website.
+
+![Full Admin Panel](./readme-files/images/admin-full.png)
+
+Important for managing Blog Posts:
+<details>
+<summary><strong>Post Management</strong></summary>
+This section allows admins to create, edit, and delete blog posts, including an image.
+</details>
+
+<details>
+<summary><strong>Comment Moderation</strong></summary>
+Admins can review and approve or reject user comments. This feature helps to filter out inappropriate content.
+</details>
+
+### Features in Planning
+
+The primary goal of **Venture Vibes** is to continuously add more adventures and enhance the user experience. With this growth in mind, the backend has been designed for modularity, breaking it down into smaller, manageable apps. If you're curious what is planned next, check out [User Stories](https://intriguing-caper-d96.notion.site/a850adf08793496bb36409cc238f0533?v=dd73d186fa8e4a9f85ccfa0c624279c8).
+
+[Back to Top](#top)
+
 ## Testing
 
 ### HTML Validator
