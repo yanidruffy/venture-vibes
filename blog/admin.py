@@ -7,6 +7,11 @@ from .models import Comment, Post
 
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
+    """
+    Admin interface for managing blog posts.
+
+    This allows rich text editing for body and excerpt fields.
+    """
     list_display = ["title", "slug", "author", "publish", "status"]
     list_filter = ["status", "created", "publish", "author"]
     search_fields = ["title", "body"]
@@ -21,6 +26,11 @@ class PostAdmin(SummernoteModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
+    """
+    Admin interface for managing comments on blog posts.
+
+    This allows approving comments.
+    """
     list_display = ["author", "post", "created", "active"]
     list_filter = ["active", "created", "updated"]
     search_fields = ["author", "body"]

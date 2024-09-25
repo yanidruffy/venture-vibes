@@ -7,6 +7,10 @@ from cloudinary.models import CloudinaryField
 
 
 class Post(models.Model):
+    """
+    Represents a blog post entry authored by a user,
+    related to :model:`auth.User` and :model:`blog.Post`.
+    """
     class Status(models.TextChoices):
         DRAFT = "DF", "Draft"
         PUBLISHED = "PB", "Published"
@@ -39,6 +43,10 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
+    """
+    Represents a comment on a blog post authored by a user,
+    related to :model:`auth.User` and :model:`blog.Post`.
+    """
     post = models.ForeignKey(
         Post,
         on_delete=models.CASCADE,

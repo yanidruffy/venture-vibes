@@ -6,6 +6,9 @@ from .models import ContactRequest
 
 @admin.register(ContactRequest)
 class ContactRequestAdmin(admin.ModelAdmin):
+    """
+    Admin interface for managing contact requests.
+    """
     list_display = ("name", "email", "read")
     list_filter = ("read",)
     search_fields = ("name", "email")

@@ -9,6 +9,19 @@ from .models import Post, Comment
 
 
 class PostListView(generic.ListView):
+    """
+    Renders a list of published blog posts.
+
+    Displays instances of :model:`blog.Post` that are published,
+    along with pagination.
+
+    **Context**
+    ``posts``
+        A queryset of published blog posts.
+
+    **Template**
+    :template:`blog/list.html`
+    """
     model = Post
     queryset = Post.objects.filter(status=Post.Status.PUBLISHED)
     template_name = "blog/list.html"
@@ -17,6 +30,26 @@ class PostListView(generic.ListView):
 
 
 class PostDetailView(View):
+    """
+    Displays an individual instance of :model:`blog.Post` and allows users to
+    submit comments.
+
+    **Context**
+    ``post``
+        The blog post instance retrieved by slug.
+
+    ``comments``
+        A queryset of comments related to the post.
+
+    ``comment_count``
+        The number of active comments on the post.
+
+    ``comment_form``
+        An instance of :form:`blog.CommentForm`.
+
+    **Template**
+    :template:`blog/post_detail.html`
+    """
     def get(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
         comments = post.comments.all().order_by("-created")
@@ -73,7 +106,18 @@ class PostDetailView(View):
 
 
 def comment_edit(request, slug, comment_id):
+    """
+    Display an individual comment for edit.
 
+    **Context**
+
+    ``post``
+        An instance of :model:`blog.Post`.
+    ``comment``
+        A single comment related to the post.
+    ``comment_form``
+        An instance of :form:`blog.CommentForm`.
+    """
     if request.method == "POST":
         post = get_object_or_404(Post, slug=slug)
         comment = get_object_or_404(Comment, pk=comment_id)
@@ -103,6 +147,16 @@ def comment_edit(request, slug, comment_id):
 
 
 def comment_delete(request, slug, comment_id):
+    """
+    Delete an individual comment.
+
+    **Context**
+
+    ``post``
+        An instance of :model:`blog.Post`.
+    ``comment``
+        A single comment related to the post.
+    """
     post = get_object_or_404(Post, slug=slug)
     comment = get_object_or_404(Comment, pk=comment_id)
 
@@ -124,6 +178,14 @@ def comment_delete(request, slug, comment_id):
 
 
 def index(request):
+    """
+    Display the latest published blog post.
+
+    **Context**
+
+    ``latest_post``
+        The most recent instance of :model:`blog.Post` that is published.
+    """
     latest_post = (
         Post.objects.filter(status=Post.Status.PUBLISHED)
             .order_by("-publish").first()
@@ -136,6 +198,14 @@ def index(request):
 
 
 def like_post(request, slug):
+    """
+    Toggle like status for a specific blog post.
+
+    **Context**
+
+    ``post``
+        An instance of :model:`blog.Post` that is being liked or unliked.
+    """
     post = get_object_or_404(Post, slug=slug)
     if post.likes.filter(id=request.user.id).exists():
         post.likes.remove(request.user)

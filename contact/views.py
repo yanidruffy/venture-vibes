@@ -8,6 +8,16 @@ from .forms import ContactForm
 
 
 def contact_view(request):
+    """
+    Handle the contact form submission.
+
+    Displays a success message upon valid submission.
+
+    **Context**
+
+    ``contact_form``
+        An instance of :form:`contact.ContactForm`.
+    """
     if request.method == "POST":
         contact_form = ContactForm(data=request.POST)
         if contact_form.is_valid():

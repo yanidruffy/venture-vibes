@@ -4,6 +4,9 @@ from django.db import models
 
 
 class About(models.Model):
+    """
+    Represents the About page content.
+    """
     title = models.CharField(max_length=250)
     body = models.TextField()
     updated = models.DateTimeField(auto_now=True)
