@@ -634,3 +634,61 @@ Friends, colleagues, and my mentor tested the application across various devices
     </details>
 
 [Back to Top](#top)
+
+# Credits
+
+## Content
+
+- **Django 5 By Example**:
+    Recommended by my [mentor](https://5pence.net/), this book by Antonio Melé was instrumental in boosting my understanding of Django.
+
+- **Code Institute Walkthrough Project**:  
+    Portions of code were reused from Code Institute’s walkthrough project, *"I think therefore I blog."* This served as a foundational resource for my blog functionality.
+
+- **Walking the Wainwrights**:
+    My cohort facilitator introduced me to Martin Bradbury's [Walking the Wainwrights](https://github.com/MartinBradbury/walking-the-wainwrights), which provided creative inspiration.
+
+- **Images**:
+    All images regarding the blog are original and were taken by myself.
+
+- **README**:
+    My README structure was inspired by my [previous project](https://github.com/yanidruffy/stratagem-hero) and insights from my colleague [Sebastian](https://github.com/Mienjung97/PROject-GOLFblog/blob/main/README.md).
+
+## Development Tools
+
+- **Bootstrap**:
+    I used [Bootstrap](https://getbootstrap.com/) for styling and responsiveness, particularly benefiting from its grid system and components.
+
+- **Black**:
+    Code formatter [Black](https://pypi.org/project/black/) was used for the python files to ensure code consistency.
+
+- **Beautify**:
+    I used [Beautify](https://beautifier.io/) for formatting my HTML, CSS, and JavaScript code.
+
+- **Perplexity**:
+    Assisted in generating text for blog posts using [Perplexity](https://www.perplexity.ai/).
+
+## References
+
+- **Balsamiq**:
+    Wireframes for the project were designed using [Balsamiq](https://balsamiq.com/wireframes/).
+
+- **Coolors**:
+    The color scheme was created using [Coolors](https://coolors.co/).
+
+- **ImageResizer**:
+    Image optimization and resizing were handled using [ImageResizer](https://imageresizer.com/).
+
+- **Heroku**:
+    The project was successfully deployed on [Heroku](https://www.heroku.com/).
+
+- **Notion**:
+    I organized my project through [Notion](https://www.notion.so/).
+
+## Acknowledgements
+
+- A big thank you to my [mentor](https://5pence.net/) and my friends and colleagues for reviewing the project and providing invaluable feedback that greatly improved both the design and functionality.
+- Special thanks to Roo from the Code Institute's Support Team for his guidance.
+- I also want to express my gratitude to my partner, who accompanied me on this adventure. Your support has been invaluable.
+
+[Back to Top](#top)
