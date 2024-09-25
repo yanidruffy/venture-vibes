@@ -4,7 +4,7 @@ Welcome to [Venture Vibes!](https://venture-vibes-e0fcf8943946.herokuapp.com/)
 ![Venture Vibes](./readme-files/images/amiresponsive.png)
 
 ## Description
-**Venture Vibes** is an adventure blog dedicated to showcasing my partner and I's travel experiences, inspiring wanderlust, and providing valuable insights for fellow explorers.<br>
+**Venture Vibes** is an adventure blog dedicated to showcasing the travel experiences of my partner and me, inspiring wanderlust, and providing valuable insights for fellow explorers.<br>
 This project features a user-friendly platform where readers can discover captivating stories, and detailed destination guides. The blog aims to document our adventures and create an engaging community for travel enthusiasts. Venture Vibes invites you to join our journey and ignite your passion for travel.
 
 ## User Experience
@@ -562,10 +562,75 @@ The Lighthouse reports have been generated to audit the website for performance,
 ### Manual Testing
 
 Manual testing was performed to ensure the application meets the acceptance criteria outlined in the [User Stories](https://intriguing-caper-d96.notion.site/Venture-Vibes-Project-Management-561b1b85789f49ce8c0ad37801c98188).<br>
-I reviewed each user story and tested the corresponding features to ensure everything works as expected. Through manual testing, I was able to confirm that the application functions well and is user-friendly, meeting the needs and expectations of users.
+**Each User Story includes a dedicated task for testing.**<br>
+I reviewed each user story and tested the corresponding features to ensure everything works as expected. Through manual testing, I confirmed that the application functions well and is user-friendly, meeting the needs and expectations of users.
 
 ### Peer Review
 
-Friends, colleagues, and my mentor tested the application across various devices to ensure its functionality and usability. Their feedback helped identify areas for improvement, contributing to a more robust final product.
+Friends, colleagues, and my mentor tested the application across various devices to ensure its functionality and usability. Their feedback helped identify areas for improvement, contributing to a more robust iteration of the application.
+
+[Back to Top](#top)
+
+## Deployment
+
+**Venture Vibes** was deployed using [Heroku](https://www.heroku.com/) and is built upon a template from [Code Institute](https://github.com/Code-Institute-Org/ci-full-template).
+
+1. **Heroku Setup**: 
+- Create an account on Heroku and log in
+- Click on **New** and choose **Create a new app**
+- Follow the steps and click **Create app**
+
+    <details>
+    <summary><strong>Create app</strong></summary>
+
+    ![Start Deployment](./readme-files/images/deployment-start.png)
+    ![Create App Form Deployment](./readme-files/images/deployment-start-steps.png)
+    </details>
+
+2. **Connect to Github Repository**:
+- Go to the Deploy tab and look for Deployment method and select **Github**
+- Search for your repository and click **Connect**
+
+    <details>
+    <summary><strong>Connect to Repository</strong></summary>
+
+    ![Github Connect Repository](./readme-files/images/deployment-github-connect.png)
+    </details>
+
+
+3. **Configure Heroku Settings**:
+- Go to the Settings tab and select **Reveal Config Vars**
+- Here, add sensitive but necessary data from your `env.py` file, such as database URLs and your secret key
+- Ensure that all required environment variables are set for your application to function properly
+- Scroll down to Buildpacks and click **Add buildpack**
+- Choose **python** and click **Add Buildpack**
+
+    <details>
+    <summary><strong>Settings Config & Buildpacks</strong></summary>
+
+    ![Config Vars](./readme-files/images/deployment-config.png)
+    ![Buildpacks](./readme-files/images/deployment-buildpack.png)
+    </details>
+
+4. **Deploy with Heroku**:
+- Deploy the application using git push bash command in your IDE
+- Go to Heroku Deploy tab and look for Manual Deploy and click **Deploy Branch**
+- There is also an option to Enable Automatic Deploys
+
+    <details>
+    <summary><strong>Manual Deploy</strong></summary>
+
+    ![Deploy Branch](./readme-files/images/deployment-branch.png)
+    </details>
+
+5. **Finalizing Deployment**:
+- Once the deployment is complete, you will see a confirmation message, a new button called **View** will appear and the app will be live
+- Click on **View** to open your live website
+
+    <details>
+    <summary><strong>Deployment Success</strong></summary>
+
+    ![Successful Deployment](./readme-files/images/deployment-success.png)
+    </details>
 
 [Back to Top](#top)
