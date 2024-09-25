@@ -1,11 +1,28 @@
 # Venture Vibes
 <a name="top"></a>
-Welcome to [Venture Vibes!](https://venture-vibes-e0fcf8943946.herokuapp.com/)
 ![Venture Vibes](./readme-files/images/amiresponsive.png)
 
 ## Description
 **Venture Vibes** is an adventure blog dedicated to showcasing the travel experiences of my partner and me, inspiring wanderlust, and providing valuable insights for fellow explorers.<br>
-This project features a user-friendly platform where readers can discover captivating stories, and detailed destination guides. The blog aims to document our adventures and create an engaging community for travel enthusiasts. Venture Vibes invites you to join our journey and ignite your passion for travel.
+This project features a user-friendly platform where readers can discover captivating stories, and detailed destination guides. The blog aims to document our adventures and create an engaging community for travel enthusiasts. Venture Vibes invites you to join our journey and ignite your passion for travel.<br>
+
+### [Welcome to Venture Vibes!](https://venture-vibes-e0fcf8943946.herokuapp.com/)
+
+## Project Management
+
+### Project Board
+
+For this part of the project, I used [Notion](https://www.notion.so/) to work on my [project board](https://www.notion.so/Venture-Vibes-Project-Management-561b1b85789f49ce8c0ad37801c98188?pvs=4) using an agile approach.
+
+<details>
+<summary><strong>Project Board</strong></summary>
+
+![Project Board](./readme-files/images/project-board.png)
+</details>
+
+### Commits
+
+Early on in the project, I decided to change how I approached my commits. Taking the feedback from my assessor on a previous project to heart, I wanted to be more organized with my commit messages. So, I started using a prefix system I learned from [Code Institute](https://codeinstitute.net/global/) as well as [freecodecamp](https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/). This made it easier to categorize my changes and also helps anyone looking at the project understand the progress at a glance.
 
 ## User Experience
 
@@ -38,14 +55,6 @@ All wireframes were created using [Balsamiq](https://balsamiq.com/wireframes/). 
 </details>
 
 ### User Stories
-
-For this part of the project, I used [Notion](https://www.notion.so/) to work on my [project board](https://www.notion.so/Venture-Vibes-Project-Management-561b1b85789f49ce8c0ad37801c98188?pvs=4) using an agile approach.
-
-<details>
-<summary><strong>Project Board</strong></summary>
-
-![Project Board](./readme-files/images/project-board.png)
-</details>
 
 The project was guided by the following user story structure:
 - **Title:** of the User Story
@@ -90,7 +99,7 @@ I decided to keep the typography simple by using a clean and readable sans-serif
 - **User-friendly Interface:** An intuitive website for browsing
 
 #### Homepage
-The **homepage** serves as the hub of **Venture Vibes** with an eye-catching banner, stunning travel images and featuring the latest blog post.
+The **homepage** serves as the hub of **Venture Vibes** with an eye-catching banner, stunning travel images and featuring the latest blog post.<br>
 
 ![Full Homepage](./readme-files/images/home-full.png)
 
@@ -136,7 +145,7 @@ The footer provides essential links for staying connected. It includes social me
 
 #### Blog
 
-The **Blog** section is the heart of Venture Vibes, where users can explore a variety of travel posts. This section features a hero section, card-based blog previews, and pagination to navigate through multiple posts with ease.
+The **Blog** section is the heart of Venture Vibes, where users can explore a variety of travel posts. This section features a hero section, card-based blog previews, and pagination to navigate through multiple posts with ease.<br>
 
 ![Full Blog Page](./readme-files/images/blog-full.png)
 
@@ -166,8 +175,10 @@ The blog page features Pagination Controls at the bottom, allowing users to navi
 
 #### Post Detail
 
-The **Post Detail** page allows readers to dive deeper into each individual blog post. Users get a rich narrative that is supported by a stunning picture and opportunities to engage.
+The **Post Detail** page allows readers to dive deeper into each individual blog post. Users get a rich narrative that is supported by a stunning picture and opportunities to engage.<br>
+
 ![Full Post Detail Page](./readme-files/images/post-full.png)
+
 <details>
 <summary><strong>Hero Section</strong></summary>
 
