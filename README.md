@@ -7,6 +7,78 @@ Welcome to [Venture Vibes!](https://venture-vibes-e0fcf8943946.herokuapp.com/)
 **Venture Vibes** is an adventure blog dedicated to showcasing my partner and I's travel experiences, inspiring wanderlust, and providing valuable insights for fellow explorers.<br>
 This project features a user-friendly platform where readers can discover captivating stories, and detailed destination guides. The blog aims to document our adventures and create an engaging community for travel enthusiasts. Venture Vibes invites you to join our journey and ignite your passion for travel.
 
+## User Experience
+
+### Wireframes
+
+All wireframes were created using [Balsamiq](https://balsamiq.com/wireframes/). The purpose was to outline the basic structure and layout of the website.
+
+<details>
+<summary><strong>Homepage</strong></summary>
+
+![Homepage Wireframe](./readme-files/images/wireframes/homepage-wireframe.png)
+</details>
+
+<details>
+<summary><strong>Blog</strong></summary>
+
+![Blog Wireframe](./readme-files/images/wireframes/blog-wireframe.png)
+</details>
+
+<details>
+<summary><strong>Blog Post</strong></summary>
+
+![Blog Post Wireframe](./readme-files/images/wireframes/blog-post-wireframe.png)
+</details>
+
+<details>
+<summary><strong>About</strong></summary>
+
+![About Wireframe](./readme-files/images/wireframes/about-wireframe.png)
+</details>
+
+### User Stories
+
+For this part of the project, I used [Notion](https://www.notion.so/) to work on my [project board](https://www.notion.so/Venture-Vibes-Project-Management-561b1b85789f49ce8c0ad37801c98188?pvs=4) using an agile approach.
+
+<details>
+<summary><strong>Project Board</strong></summary>
+
+![Project Board](./readme-files/images/project-board.png)
+</details>
+
+The project was guided by the following user story structure:
+- **Title:** of the User Story
+- **Description:** As a *role* I can *capability* so that *received benefit*
+- **Acceptance Criteria:** Clear, measurable conditions that must be done in order for the user story to be considered complete
+- **Tasks:** Actionable items needed to implement the user story
+
+<details>
+<summary><strong>User Story Example</strong></summary>
+
+![User Story](./readme-files/images/user-story.png)
+</details>
+
+For a full list of user stories, visit the [User Stories](https://intriguing-caper-d96.notion.site/a850adf08793496bb36409cc238f0533?v=dd73d186fa8e4a9f85ccfa0c624279c8) or the previous link above.
+
+### Design Choices
+
+#### Color Scheme
+The color scheme was created using [coolors](https://coolors.co/). I chose these colors to fit the feeling of exploration, nature and adventure. On top, since the first adventure is taking place in Iceland, I went for a cooler tone.
+
+<details>
+<summary><strong>Color Palette</strong></summary>
+
+![Color Palette](./readme-files/images/color-palette.png)
+</details>
+
+#### Typography
+
+I decided to keep the typography simple by using a clean and readable sans-serif font. **Verdana** was the choice for me. Due to limitations with the Summernote editor in Django, I opted for
+**Helvetica Neue**, a similar sans-serif font for the blog posts.
+
+[Back to Top](#top)
+
 ## Features
 
 ### Existing Features
@@ -161,7 +233,7 @@ Admins can review and approve or reject user comments. This feature helps to fil
 
 ### Features in Planning
 
-The primary goal of **Venture Vibes** is to continuously add more adventures and enhance the user experience. With this growth in mind, the backend has been designed for modularity, breaking it down into smaller, manageable apps. If you're curious what is planned next, check out [User Stories](https://intriguing-caper-d96.notion.site/a850adf08793496bb36409cc238f0533?v=dd73d186fa8e4a9f85ccfa0c624279c8).
+The primary goal of **Venture Vibes** is to continuously add more adventures and enhance the user experience. With this growth in mind, the backend has been designed for modularity, breaking it down into smaller, manageable apps. If you're curious what is planned next, check out [User Stories](https://intriguing-caper-d96.notion.site/Venture-Vibes-Project-Management-561b1b85789f49ce8c0ad37801c98188).
 
 [Back to Top](#top)
 
@@ -489,7 +561,7 @@ The Lighthouse reports have been generated to audit the website for performance,
 
 ### Manual Testing
 
-Manual testing was performed to ensure the application meets the acceptance criteria outlined in the [User Stories](https://intriguing-caper-d96.notion.site/a850adf08793496bb36409cc238f0533?v=dd73d186fa8e4a9f85ccfa0c624279c8).<br>
+Manual testing was performed to ensure the application meets the acceptance criteria outlined in the [User Stories](https://intriguing-caper-d96.notion.site/Venture-Vibes-Project-Management-561b1b85789f49ce8c0ad37801c98188).<br>
 I reviewed each user story and tested the corresponding features to ensure everything works as expected. Through manual testing, I was able to confirm that the application functions well and is user-friendly, meeting the needs and expectations of users.
 
 ### Peer Review
