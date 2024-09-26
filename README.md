@@ -1,5 +1,5 @@
 # Venture Vibes
-<a name="top"></a>
+<a name="top"></a><br>
 ![Venture Vibes](./readme-files/images/amiresponsive.png)
 
 ## Description
@@ -12,7 +12,7 @@ This project features a user-friendly platform where readers can discover captiv
 
 ### Project Board
 
-For this part of the project, I used [Notion](https://www.notion.so/) to work on my [project board](https://www.notion.so/Venture-Vibes-Project-Management-561b1b85789f49ce8c0ad37801c98188?pvs=4) using an agile approach.
+[Notion](https://www.notion.so/) is the application I used to work on my [project board](https://www.notion.so/Venture-Vibes-Project-Management-561b1b85789f49ce8c0ad37801c98188?pvs=4) using an agile approach. It includes a kanban board for User Stories and a timeline that displays the various sprints and epics. For a deeper dive into the user stories, see the [User Stories Section](#user-stories) section below.
 
 <details>
 <summary><strong>Project Board</strong></summary>
@@ -56,6 +56,8 @@ All wireframes were created using [Balsamiq](https://balsamiq.com/wireframes/). 
 
 ### User Stories
 
+Each user story was categorized into **Must Have**, **Should Have**, and **Could Have** tags for prioritization. Additionally, each user story has been organized into **Sprints** and **Epics**, providing clarity on when to address each user story.
+
 The project was guided by the following user story structure:
 - **Title:** of the User Story
 - **Description:** As a *role* I can *capability* so that *received benefit*
@@ -68,7 +70,7 @@ The project was guided by the following user story structure:
 ![User Story](./readme-files/images/user-story.png)
 </details>
 
-For a full list of user stories, visit the [User Stories](https://intriguing-caper-d96.notion.site/a850adf08793496bb36409cc238f0533?v=dd73d186fa8e4a9f85ccfa0c624279c8) or the previous link above.
+For the full list of user stories, visit the [User Stories Board](https://intriguing-caper-d96.notion.site/a850adf08793496bb36409cc238f0533?v=dd73d186fa8e4a9f85ccfa0c624279c8).
 
 ### Design Choices
 
@@ -647,6 +649,8 @@ Friends, colleagues, and my mentor tested the application across various devices
 [Back to Top](#top)
 
 # Credits
+
+This project involved extensive research, including web searches, browsing platforms like Stack Overflow, reviewing peer projects, and checking out various documentation. While many things contributed to my learning journey, the key contributions are highlighted below.
 
 ## Content
 
